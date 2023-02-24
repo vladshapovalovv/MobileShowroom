@@ -2,7 +2,7 @@ package com.example.mobileshowroom.hilt
 
 import android.os.Build
 import androidx.annotation.RequiresApi
-import com.example.mobileshowroom.MainActivity
+import com.example.mobileshowroom.hilt.service.ProductService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,7 +15,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class NetworkModule {
+object NetworkModule {
 
     @Provides
     @Singleton
@@ -41,9 +41,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun providesProductService(retrofit: Retrofit):MainActivity.ProductsService{
-       return retrofit.create(MainActivity.ProductsService::class.java)
+    fun providesProductService(retrofit: Retrofit): ProductService {
+       return retrofit.create(ProductService::class.java)
     }
-
-
 }
