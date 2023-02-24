@@ -13,6 +13,7 @@ import com.example.mobileshowroom.mapper.ProductMapper
 import com.example.mobileshowroom.network.NetworkProduct
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
 import retrofit2.Response
 import javax.inject.Inject
 
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val controller = ProductEpoxyController()
+        controller.setData(emptyList())
         binding.epoxyRecyclerView.setController(controller)
 
         lifecycleScope.launchWhenStarted {
