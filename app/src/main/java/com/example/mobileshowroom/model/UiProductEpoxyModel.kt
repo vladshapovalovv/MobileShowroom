@@ -11,7 +11,8 @@ import com.example.mobileshowroom.utils.ViewBindingKotlinModel
 import java.text.NumberFormat
 
 data class UiProductEpoxyModel(
-    val uiProduct: UiProduct?
+    val uiProduct: UiProduct?,
+    val onFavoriteIconClicked: (Int) -> Unit
 ) : ViewBindingKotlinModel<EpoxyModelProductItemBinding>(R.layout.epoxy_model_product_item) {
 
     private val currencyFormatter = NumberFormat.getCurrencyInstance()
@@ -38,6 +39,9 @@ data class UiProductEpoxyModel(
                 R.drawable.ic_round_favorite_border_24
             }
             favoriteImageView.setIconResource(imageRes)
+            favoriteImageView.setOnClickListener{
+                onFavoriteIconClicked(uiProduct.product.id)
+            }
 
             //Image loading
             productImageViewLoadingProgressBar.isVisible = true
