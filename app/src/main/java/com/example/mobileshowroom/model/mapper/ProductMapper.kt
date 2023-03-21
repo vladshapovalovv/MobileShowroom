@@ -1,6 +1,6 @@
-package com.example.mobileshowroom.mapper
+package com.example.mobileshowroom.model.mapper
 
-import com.example.mobileshowroom.domain.Product
+import com.example.mobileshowroom.model.domain.Product
 import com.example.mobileshowroom.network.NetworkProduct
 import java.math.BigDecimal
 import java.math.RoundingMode
@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 class ProductMapper @Inject constructor() {
 
-    fun buildFrom(networkProduct: NetworkProduct): Product{
+    fun buildFrom(networkProduct: NetworkProduct): Product {
         return Product(
             category = networkProduct.category,
             description = networkProduct.description,

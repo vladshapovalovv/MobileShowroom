@@ -1,4 +1,4 @@
-package com.example.mobileshowroom.domain
+package com.example.mobileshowroom.model.domain
 
 import java.math.BigDecimal
 

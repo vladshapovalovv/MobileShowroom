@@ -1,4 +1,4 @@
-package com.example.mobileshowroom.epoxy
+package com.example.mobileshowroom.utils
 
 import android.view.View
 import androidx.annotation.LayoutRes
