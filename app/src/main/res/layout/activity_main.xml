@@ -7,10 +7,24 @@
     android:animateLayoutChanges="true"
     tools:context=".model.MainActivity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Home" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <com.airbnb.epoxy.EpoxyRecyclerView
         android:id="@+id/epoxyRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:clipChildren="false"
         android:orientation="vertical"
         android:paddingHorizontal="16dp"
@@ -18,10 +32,9 @@
         android:paddingBottom="24dp"
         app:itemSpacing="16dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
         tools:itemCount="7"
         tools:listitem="@layout/epoxy_model_product_item" />
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
