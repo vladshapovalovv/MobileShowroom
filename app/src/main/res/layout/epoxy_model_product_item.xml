@@ -47,7 +47,8 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/favoriteImageView"
-                style="@style/Widget.Material3.Button.Icon"
+                style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+                app:iconTint="@color/color_white"
                 android:backgroundTint="@color/md_theme_light_primary"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
@@ -103,7 +104,8 @@
             <com.google.android.material.button.MaterialButton
                 android:backgroundTint="@color/md_theme_light_primary"
                 android:id="@+id/addToCartButton"
-                style="@style/Widget.Material3.Button.Icon"
+                style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+                app:iconTint="@color/color_white"
                 android:layout_width="68dp"
                 android:layout_height="34dp"
                 android:layout_margin="8dp"
@@ -117,8 +119,9 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/inCartView"
-                style="@style/Widget.Material3.Button.Icon"
+                style="@style/Widget.Material3.Button.ElevatedButton.Icon"
                 android:layout_width="16dp"
+                app:iconTint="@color/color_white"
                 android:layout_height="16dp"
                 android:layout_margin="6dp"
                 android:insetTop="0dp"
@@ -163,7 +166,7 @@
             android:id="@+id/cardViewShimmer"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            app:cardBackgroundColor="@color/md_theme_light_onPrimary"
+            app:cardBackgroundColor="@color/color_white"
             app:cardCornerRadius="@dimen/corner_radius"
             app:layout_constraintBottom_toTopOf="@id/productDescriptionTextView"
             app:layout_constraintEnd_toEndOf="parent"
