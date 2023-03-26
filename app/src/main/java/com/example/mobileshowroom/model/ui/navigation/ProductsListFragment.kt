@@ -8,16 +8,18 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.asLiveData
 import com.example.mobileshowroom.R
 import com.example.mobileshowroom.databinding.FragmentProductsListBinding
+import com.example.mobileshowroom.model.MainActivity
 import com.example.mobileshowroom.model.ProductsListViewModel
 import com.example.mobileshowroom.model.UiProductEpoxyController
 import com.example.mobileshowroom.model.ui.UiProduct
+import com.example.mobileshowroom.utils.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 
 @AndroidEntryPoint
-class ProductsListFragment : Fragment(R.layout.fragment_products_list) {
+class ProductsListFragment : BaseFragment(R.layout.fragment_products_list) {
 
     private val binding: FragmentProductsListBinding by viewBinding()
     private val viewModel: ProductsListViewModel by viewModels()
@@ -28,7 +30,6 @@ class ProductsListFragment : Fragment(R.layout.fragment_products_list) {
         val controller = UiProductEpoxyController(viewModel)
         controller.setData(emptyList())
         binding.epoxyRecyclerView.setController(controller)
-
         combine(
             viewModel.store.stateFlow.map { it.products },
             viewModel.store.stateFlow.map { it.favoriteProductIds  }

@@ -8,8 +8,18 @@
     <fragment
         android:id="@+id/productsListFragment"
         android:name="com.example.mobileshowroom.model.ui.navigation.ProductsListFragment"
-        android:label="products list"
-        tools:layout="@layout/fragment_products_list" />
+        android:label="All products"
+        tools:layout="@layout/fragment_products_list" >
+        <action
+            android:id="@+id/action_productsListFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.mobileshowroom.model.ui.navigation.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
 
 
 </navigation>
